@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Clock2</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="wrapper">
+          <div class="display">
+               <div id="time"></div>
+          </div>
+           
+     </div>
+     <script>
+          setInterval(() =>{
+               let time = document.getElementById("time");
+               let data = new Date();
+               let hours = data.getHours();
+               let minit = data.getMinutes();
+               let sec = data.getSeconds();
+              let day_night = "PM";
+
+                        if(hours > 12){
+                              day_night ="AM";
+                              hour = hour - 12;  
+                        }
+                        if(hours < 10){
+                          hours = "0" + hours
+                        }
+                        if(minit <10){
+                         minit = "0 " + minit;
+                        }
+                        if(sec <10){
+                          sec= "0" + sec;
+                        }
+                        
+                          
+           
+ 
+
+  
+
+               time.textContent = hours + ":" + minit + ":" + sec +" "+ "- " + day_night;
+          });
+ 
+     </script>
+</body>
+</html>
